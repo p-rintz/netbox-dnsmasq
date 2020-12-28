@@ -14,7 +14,17 @@ The DNS adding will also work for singular IPs outside Prefixes.
 This python program will also use other tags applied to the IP address and use them as the Set for dnsmasq.  
 This is important if you have multiple Vlans for example and want dnsmasq to manage the different options based on the sets.
 
-Output will for example be the following:
+Available CLI parameters are:
+
+```
+usage: netbox-dnsmasq.py [-h] [-d]
+
+optional arguments:
+  -h, --help   show this help message and exit
+  -d, --debug  more verbose feedback
+```
+
+Example output could for example be the following:
 
 ```
 dhcp-host=74-18-63-53-73-60,10.1.11.140,phone,set:wifi
@@ -25,7 +35,7 @@ dhcp-host=12-80-1E-32-B8-C7,10.2.22.202,vm-machine4,set:vmnet
 dhcp-host=45-B5-C3-9F-CE-EC,10.3.33.10,public-dns,set:public
 ```
 
-An example config for dnsmasq would look like the following:
+An example config for dnsmasq with sets would look like the following:
 
 ```
 dnssec
