@@ -1,3 +1,5 @@
 .vscode/launch.json
+.idea
+venv
 dhcphosts.conf
 dnsmasq.hosts

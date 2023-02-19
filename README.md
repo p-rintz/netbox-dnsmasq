@@ -7,9 +7,12 @@ Configs will be saved in the following two locations:
 DHCP config location: `/etc/dnsmasq.d/dhcphosts.conf`  
 DNS hosts file location: `/etc/dnsmasq.hosts`
 
-Prefixes that should be scanned for Hosts need to be tagged with the tag "dhcp" in Netbox.  
+**Prefixes** that should be scanned for Hosts, by default, need to be tagged with the tag "dhcp" in Netbox.  
 IPs that should not be installed in the DHCP config or installed as DNS records need to be tagged with "no-dhcp" in Netbox.  
-The DNS adding will also work for singular IPs outside Prefixes.
+
+If you like, you can change both tags to something else by using the `--tag` and `--dns-tag` CLI parameters. 
+
+**Adding IP's to DNS will also work for singular IPs outside prefixes.**
 
 This python program will also use other tags applied to the IP address and use them as the Set for dnsmasq.  
 This is important if you have multiple Vlans for example and want dnsmasq to manage the different options based on the sets.
@@ -17,11 +20,14 @@ This is important if you have multiple Vlans for example and want dnsmasq to man
 Available CLI parameters are:
 
 ```
-usage: netbox-dnsmasq.py [-h] [-d]
+usage: netbox-dnsmasq.py [-h] [-d] [--dev] [-t TAG] [--dns-tag DNS_TAG]
 
-optional arguments:
-  -h, --help   show this help message and exit
-  -d, --debug  more verbose feedback
+options:
+  -h, --help         show this help message and exit
+  -d, --debug        more verbose feedback
+  --dev              save configs to current directory and disable dnsmasq restart
+  -t TAG, --tag TAG  netbox tag that will be used to search for prefixes to include in DHCP config (default: dhcp)
+  --dns-tag DNS_TAG  netbox tag that will be used to mark IP's to only be included in DNS config (default: no-dhcp)
 ```
 
 Example output could for example be the following:
