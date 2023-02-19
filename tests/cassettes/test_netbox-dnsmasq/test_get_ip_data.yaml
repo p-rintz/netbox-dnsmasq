@@ -1,0 +1,552 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.28.2
+      accept:
+      - application/json;
+      authorization:
+      - Token 0123456789abcdef0123456789abcdef01234567
+    method: GET
+    uri: http://10.1.0.171:8000/api/ipam/ip-addresses/?tag=no-dhcp&limit=0
+  response:
+    body:
+      string: '{"count":6,"next":null,"previous":null,"results":[{"id":6,"url":"http://10.1.0.171:8000/api/ipam/ip-addresses/6/","display":"1.1.1.1/32","family":{"value":4,"label":"IPv4"},"address":"1.1.1.1/32","vrf":null,"tenant":null,"status":{"value":"active","label":"Active"},"role":null,"assigned_object_type":null,"assigned_object_id":null,"assigned_object":null,"nat_inside":null,"nat_outside":[],"dns_name":"test123.example.com","description":"","comments":"","tags":[{"id":2,"url":"http://10.1.0.171:8000/api/extras/tags/2/","display":"no-dhcp","name":"no-dhcp","slug":"no-dhcp","color":"9e9e9e"}],"custom_fields":{},"created":"2023-02-19T15:13:51.610855Z","last_updated":"2023-02-19T18:12:44.361807Z"},{"id":2,"url":"http://10.1.0.171:8000/api/ipam/ip-addresses/2/","display":"1.1.1.2/32","family":{"value":4,"label":"IPv4"},"address":"1.1.1.2/32","vrf":null,"tenant":null,"status":{"value":"active","label":"Active"},"role":null,"assigned_object_type":null,"assigned_object_id":null,"assigned_object":null,"nat_inside":null,"nat_outside":[],"dns_name":"testdns2.example.com","description":"","comments":"","tags":[{"id":2,"url":"http://10.1.0.171:8000/api/extras/tags/2/","display":"no-dhcp","name":"no-dhcp","slug":"no-dhcp","color":"9e9e9e"}],"custom_fields":{},"created":"2023-02-19T03:02:28.649070Z","last_updated":"2023-02-19T18:12:49.277027Z"},{"id":10,"url":"http://10.1.0.171:8000/api/ipam/ip-addresses/10/","display":"9.9.9.9/32","family":{"value":4,"label":"IPv4"},"address":"9.9.9.9/32","vrf":null,"tenant":null,"status":{"value":"active","label":"Active"},"role":null,"assigned_object_type":"virtualization.vminterface","assigned_object_id":2,"assigned_object":{"id":2,"url":"http://10.1.0.171:8000/api/virtualization/interfaces/2/","display":"eth0","virtual_machine":{"id":2,"url":"http://10.1.0.171:8000/api/virtualization/virtual-machines/2/","display":"TestDuplicateMac","name":"TestDuplicateMac"},"name":"eth0"},"nat_inside":null,"nat_outside":[],"dns_name":"","description":"","comments":"","tags":[{"id":2,"url":"http://10.1.0.171:8000/api/extras/tags/2/","display":"no-dhcp","name":"no-dhcp","slug":"no-dhcp","color":"9e9e9e"}],"custom_fields":{},"created":"2023-02-19T21:23:21.264745Z","last_updated":"2023-02-19T21:31:30.548314Z"},{"id":4,"url":"http://10.1.0.171:8000/api/ipam/ip-addresses/4/","display":"10.1.1.1/24","family":{"value":4,"label":"IPv4"},"address":"10.1.1.1/24","vrf":null,"tenant":null,"status":{"value":"active","label":"Active"},"role":null,"assigned_object_type":null,"assigned_object_id":null,"assigned_object":null,"nat_inside":null,"nat_outside":[],"dns_name":"nonworking2.example.com","description":"","comments":"","tags":[{"id":1,"url":"http://10.1.0.171:8000/api/extras/tags/1/","display":"dhcp","name":"dhcp","slug":"dhcp","color":"9e9e9e"},{"id":2,"url":"http://10.1.0.171:8000/api/extras/tags/2/","display":"no-dhcp","name":"no-dhcp","slug":"no-dhcp","color":"9e9e9e"}],"custom_fields":{},"created":"2023-02-19T03:03:05.043442Z","last_updated":"2023-02-19T18:13:06.372014Z"},{"id":8,"url":"http://10.1.0.171:8000/api/ipam/ip-addresses/8/","display":"10.1.1.1/24","family":{"value":4,"label":"IPv4"},"address":"10.1.1.1/24","vrf":null,"tenant":null,"status":{"value":"active","label":"Active"},"role":null,"assigned_object_type":null,"assigned_object_id":null,"assigned_object":null,"nat_inside":null,"nat_outside":[],"dns_name":"duplicateip.example.com","description":"","comments":"","tags":[{"id":2,"url":"http://10.1.0.171:8000/api/extras/tags/2/","display":"no-dhcp","name":"no-dhcp","slug":"no-dhcp","color":"9e9e9e"}],"custom_fields":{},"created":"2023-02-19T18:31:46.711288Z","last_updated":"2023-02-19T18:34:42.971132Z"},{"id":3,"url":"http://10.1.0.171:8000/api/ipam/ip-addresses/3/","display":"10.80.20.30/24","family":{"value":4,"label":"IPv4"},"address":"10.80.20.30/24","vrf":null,"tenant":null,"status":{"value":"active","label":"Active"},"role":null,"assigned_object_type":null,"assigned_object_id":null,"assigned_object":null,"nat_inside":null,"nat_outside":[],"dns_name":"nonworking.example.com","description":"","comments":"","tags":[{"id":2,"url":"http://10.1.0.171:8000/api/extras/tags/2/","display":"no-dhcp","name":"no-dhcp","slug":"no-dhcp","color":"9e9e9e"}],"custom_fields":{},"created":"2023-02-19T03:02:46.728169Z","last_updated":"2023-02-19T18:13:10.166382Z"}]}'
+    headers:
+      Allow:
+      - GET, POST, PUT, PATCH, DELETE, HEAD, OPTIONS
+      Content-Length:
+      - '4339'
+      Content-Type:
+      - application/json
+      Cross-Origin-Opener-Policy:
+      - same-origin
+      Date:
+      - Sun, 19 Feb 2023 23:06:04 GMT
+      Referrer-Policy:
+      - same-origin
+      Server:
+      - Unit/1.27.0
+      Vary:
+      - Accept, Cookie, Origin
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.28.2
+      accept:
+      - application/json;
+      authorization:
+      - Token 0123456789abcdef0123456789abcdef01234567
+    method: GET
+    uri: http://10.1.0.171:8000/api/ipam/prefixes/?tag=dhcp&limit=0
+  response:
+    body:
+      string: '{"count":4,"next":null,"previous":null,"results":[{"id":2,"url":"http://10.1.0.171:8000/api/ipam/prefixes/2/","display":"1.1.1.0/24","family":{"value":4,"label":"IPv4"},"prefix":"1.1.1.0/24","site":null,"vrf":null,"tenant":null,"vlan":null,"status":{"value":"active","label":"Active"},"role":null,"is_pool":false,"mark_utilized":false,"description":"","comments":"","tags":[{"id":1,"url":"http://10.1.0.171:8000/api/extras/tags/1/","display":"dhcp","name":"dhcp","slug":"dhcp","color":"9e9e9e"}],"custom_fields":{},"created":"2023-02-19T03:08:24.528759Z","last_updated":"2023-02-19T03:08:24.528769Z","children":0,"_depth":0},{"id":3,"url":"http://10.1.0.171:8000/api/ipam/prefixes/3/","display":"9.9.9.0/24","family":{"value":4,"label":"IPv4"},"prefix":"9.9.9.0/24","site":null,"vrf":null,"tenant":null,"vlan":null,"status":{"value":"active","label":"Active"},"role":null,"is_pool":false,"mark_utilized":false,"description":"","comments":"","tags":[{"id":1,"url":"http://10.1.0.171:8000/api/extras/tags/1/","display":"dhcp","name":"dhcp","slug":"dhcp","color":"9e9e9e"}],"custom_fields":{},"created":"2023-02-19T21:34:56.535507Z","last_updated":"2023-02-19T21:34:56.535516Z","children":0,"_depth":0},{"id":1,"url":"http://10.1.0.171:8000/api/ipam/prefixes/1/","display":"10.1.1.0/24","family":{"value":4,"label":"IPv4"},"prefix":"10.1.1.0/24","site":null,"vrf":null,"tenant":null,"vlan":null,"status":{"value":"active","label":"Active"},"role":null,"is_pool":false,"mark_utilized":false,"description":"","comments":"","tags":[{"id":1,"url":"http://10.1.0.171:8000/api/extras/tags/1/","display":"dhcp","name":"dhcp","slug":"dhcp","color":"9e9e9e"}],"custom_fields":{},"created":"2023-02-19T03:07:13.811570Z","last_updated":"2023-02-19T03:07:13.811582Z","children":0,"_depth":0},{"id":4,"url":"http://10.1.0.171:8000/api/ipam/prefixes/4/","display":"2a00::/22","family":{"value":6,"label":"IPv6"},"prefix":"2a00::/22","site":null,"vrf":null,"tenant":null,"vlan":null,"status":{"value":"active","label":"Active"},"role":null,"is_pool":false,"mark_utilized":false,"description":"","comments":"","tags":[{"id":1,"url":"http://10.1.0.171:8000/api/extras/tags/1/","display":"dhcp","name":"dhcp","slug":"dhcp","color":"9e9e9e"}],"custom_fields":{},"created":"2023-02-19T22:14:19.510483Z","last_updated":"2023-02-19T22:16:24.889668Z","children":0,"_depth":0}]}'
+    headers:
+      Allow:
+      - GET, POST, PUT, PATCH, DELETE, HEAD, OPTIONS
+      Content-Length:
+      - '2351'
+      Content-Type:
+      - application/json
+      Cross-Origin-Opener-Policy:
+      - same-origin
+      Date:
+      - Sun, 19 Feb 2023 23:06:04 GMT
+      Referrer-Policy:
+      - same-origin
+      Server:
+      - Unit/1.27.0
+      Vary:
+      - Accept, Cookie, Origin
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.28.2
+      accept:
+      - application/json;
+      authorization:
+      - Token 0123456789abcdef0123456789abcdef01234567
+    method: GET
+    uri: http://10.1.0.171:8000/api/ipam/ip-addresses/?parent=1.1.1.0%2F24&limit=0
+  response:
+    body:
+      string: '{"count":5,"next":null,"previous":null,"results":[{"id":1,"url":"http://10.1.0.171:8000/api/ipam/ip-addresses/1/","display":"1.1.1.1/32","family":{"value":4,"label":"IPv4"},"address":"1.1.1.1/32","vrf":null,"tenant":null,"status":{"value":"active","label":"Active"},"role":null,"assigned_object_type":"dcim.interface","assigned_object_id":1,"assigned_object":{"id":1,"url":"http://10.1.0.171:8000/api/dcim/interfaces/1/","display":"eth0","device":{"id":1,"url":"http://10.1.0.171:8000/api/dcim/devices/1/","display":"Test1","name":"Test1"},"name":"eth0","cable":null,"_occupied":false},"nat_inside":null,"nat_outside":[],"dns_name":"testdns.example.com","description":"","comments":"","tags":[],"custom_fields":{},"created":"2023-02-19T03:01:57.286837Z","last_updated":"2023-02-19T18:12:35.274928Z"},{"id":6,"url":"http://10.1.0.171:8000/api/ipam/ip-addresses/6/","display":"1.1.1.1/32","family":{"value":4,"label":"IPv4"},"address":"1.1.1.1/32","vrf":null,"tenant":null,"status":{"value":"active","label":"Active"},"role":null,"assigned_object_type":null,"assigned_object_id":null,"assigned_object":null,"nat_inside":null,"nat_outside":[],"dns_name":"test123.example.com","description":"","comments":"","tags":[{"id":2,"url":"http://10.1.0.171:8000/api/extras/tags/2/","display":"no-dhcp","name":"no-dhcp","slug":"no-dhcp","color":"9e9e9e"}],"custom_fields":{},"created":"2023-02-19T15:13:51.610855Z","last_updated":"2023-02-19T18:12:44.361807Z"},{"id":2,"url":"http://10.1.0.171:8000/api/ipam/ip-addresses/2/","display":"1.1.1.2/32","family":{"value":4,"label":"IPv4"},"address":"1.1.1.2/32","vrf":null,"tenant":null,"status":{"value":"active","label":"Active"},"role":null,"assigned_object_type":null,"assigned_object_id":null,"assigned_object":null,"nat_inside":null,"nat_outside":[],"dns_name":"testdns2.example.com","description":"","comments":"","tags":[{"id":2,"url":"http://10.1.0.171:8000/api/extras/tags/2/","display":"no-dhcp","name":"no-dhcp","slug":"no-dhcp","color":"9e9e9e"}],"custom_fields":{},"created":"2023-02-19T03:02:28.649070Z","last_updated":"2023-02-19T18:12:49.277027Z"},{"id":5,"url":"http://10.1.0.171:8000/api/ipam/ip-addresses/5/","display":"1.1.1.111/32","family":{"value":4,"label":"IPv4"},"address":"1.1.1.111/32","vrf":null,"tenant":null,"status":{"value":"active","label":"Active"},"role":null,"assigned_object_type":"virtualization.vminterface","assigned_object_id":1,"assigned_object":{"id":1,"url":"http://10.1.0.171:8000/api/virtualization/interfaces/1/","display":"vmbr1","virtual_machine":{"id":1,"url":"http://10.1.0.171:8000/api/virtualization/virtual-machines/1/","display":"TestVM1","name":"TestVM1"},"name":"vmbr1"},"nat_inside":null,"nat_outside":[],"dns_name":"workingdhcp.example.com","description":"","comments":"","tags":[],"custom_fields":{},"created":"2023-02-19T03:13:26.788343Z","last_updated":"2023-02-19T18:13:00.722464Z"},{"id":7,"url":"http://10.1.0.171:8000/api/ipam/ip-addresses/7/","display":"1.1.1.222/32","family":{"value":4,"label":"IPv4"},"address":"1.1.1.222/32","vrf":null,"tenant":null,"status":{"value":"active","label":"Active"},"role":null,"assigned_object_type":"virtualization.vminterface","assigned_object_id":2,"assigned_object":{"id":2,"url":"http://10.1.0.171:8000/api/virtualization/interfaces/2/","display":"eth0","virtual_machine":{"id":2,"url":"http://10.1.0.171:8000/api/virtualization/virtual-machines/2/","display":"TestDuplicateMac","name":"TestDuplicateMac"},"name":"eth0"},"nat_inside":null,"nat_outside":[],"dns_name":"","description":"","comments":"","tags":[],"custom_fields":{},"created":"2023-02-19T15:20:25.091453Z","last_updated":"2023-02-19T15:20:25.091463Z"}]}'
+    headers:
+      Allow:
+      - GET, POST, PUT, PATCH, DELETE, HEAD, OPTIONS
+      Content-Length:
+      - '3657'
+      Content-Type:
+      - application/json
+      Cross-Origin-Opener-Policy:
+      - same-origin
+      Date:
+      - Sun, 19 Feb 2023 23:06:04 GMT
+      Referrer-Policy:
+      - same-origin
+      Server:
+      - Unit/1.27.0
+      Vary:
+      - Accept, Cookie, Origin
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.28.2
+      accept:
+      - application/json;
+      authorization:
+      - Token 0123456789abcdef0123456789abcdef01234567
+    method: GET
+    uri: http://10.1.0.171:8000/api/dcim/interfaces/1/
+  response:
+    body:
+      string: '{"id":1,"url":"http://10.1.0.171:8000/api/dcim/interfaces/1/","display":"eth0","device":{"id":1,"url":"http://10.1.0.171:8000/api/dcim/devices/1/","display":"Test1","name":"Test1"},"vdcs":[],"module":null,"name":"eth0","label":"","type":{"value":"1000base-t","label":"1000BASE-T
+        (1GE)"},"enabled":true,"parent":null,"bridge":null,"lag":null,"mtu":null,"mac_address":"74:18:63:53:73:60","speed":null,"duplex":null,"wwn":null,"mgmt_only":false,"description":"","mode":null,"rf_role":null,"rf_channel":null,"poe_mode":null,"poe_type":null,"rf_channel_frequency":null,"rf_channel_width":null,"tx_power":null,"untagged_vlan":null,"tagged_vlans":[],"mark_connected":false,"cable":null,"cable_end":"","wireless_link":null,"link_peers":[],"link_peers_type":null,"wireless_lans":[],"vrf":null,"l2vpn_termination":null,"connected_endpoints":null,"connected_endpoints_type":null,"connected_endpoints_reachable":null,"tags":[],"custom_fields":{},"created":"2023-02-19T03:11:48.697267Z","last_updated":"2023-02-19T03:11:48.697277Z","count_ipaddresses":1,"count_fhrp_groups":0,"_occupied":false}'
+    headers:
+      Allow:
+      - GET, PUT, PATCH, DELETE, HEAD, OPTIONS, TRACE
+      Content-Length:
+      - '1081'
+      Content-Type:
+      - application/json
+      Cross-Origin-Opener-Policy:
+      - same-origin
+      Date:
+      - Sun, 19 Feb 2023 23:06:04 GMT
+      Referrer-Policy:
+      - same-origin
+      Server:
+      - Unit/1.27.0
+      Vary:
+      - Accept, Cookie, Origin
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.28.2
+      accept:
+      - application/json;
+      authorization:
+      - Token 0123456789abcdef0123456789abcdef01234567
+    method: GET
+    uri: http://10.1.0.171:8000/api/virtualization/interfaces/1/
+  response:
+    body:
+      string: '{"id":1,"url":"http://10.1.0.171:8000/api/virtualization/interfaces/1/","display":"vmbr1","virtual_machine":{"id":1,"url":"http://10.1.0.171:8000/api/virtualization/virtual-machines/1/","display":"TestVM1","name":"TestVM1"},"name":"vmbr1","enabled":true,"parent":null,"bridge":null,"mtu":null,"mac_address":"74:18:63:53:AA:AA","description":"","mode":null,"untagged_vlan":null,"tagged_vlans":[],"vrf":null,"l2vpn_termination":null,"tags":[],"custom_fields":{},"created":"2023-02-19T03:13:12.341991Z","last_updated":"2023-02-19T03:13:12.342001Z","count_ipaddresses":1,"count_fhrp_groups":0}'
+    headers:
+      Allow:
+      - GET, PUT, PATCH, DELETE, HEAD, OPTIONS
+      Content-Length:
+      - '589'
+      Content-Type:
+      - application/json
+      Cross-Origin-Opener-Policy:
+      - same-origin
+      Date:
+      - Sun, 19 Feb 2023 23:06:04 GMT
+      Referrer-Policy:
+      - same-origin
+      Server:
+      - Unit/1.27.0
+      Vary:
+      - Accept, Cookie, Origin
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.28.2
+      accept:
+      - application/json;
+      authorization:
+      - Token 0123456789abcdef0123456789abcdef01234567
+    method: GET
+    uri: http://10.1.0.171:8000/api/virtualization/interfaces/2/
+  response:
+    body:
+      string: '{"id":2,"url":"http://10.1.0.171:8000/api/virtualization/interfaces/2/","display":"eth0","virtual_machine":{"id":2,"url":"http://10.1.0.171:8000/api/virtualization/virtual-machines/2/","display":"TestDuplicateMac","name":"TestDuplicateMac"},"name":"eth0","enabled":true,"parent":null,"bridge":null,"mtu":null,"mac_address":"74:18:63:53:73:60","description":"","mode":null,"untagged_vlan":null,"tagged_vlans":[],"vrf":null,"l2vpn_termination":null,"tags":[],"custom_fields":{},"created":"2023-02-19T15:19:53.910403Z","last_updated":"2023-02-19T15:19:53.910415Z","count_ipaddresses":2,"count_fhrp_groups":0}'
+    headers:
+      Allow:
+      - GET, PUT, PATCH, DELETE, HEAD, OPTIONS
+      Content-Length:
+      - '605'
+      Content-Type:
+      - application/json
+      Cross-Origin-Opener-Policy:
+      - same-origin
+      Date:
+      - Sun, 19 Feb 2023 23:06:04 GMT
+      Referrer-Policy:
+      - same-origin
+      Server:
+      - Unit/1.27.0
+      Vary:
+      - Accept, Cookie, Origin
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.28.2
+      accept:
+      - application/json;
+      authorization:
+      - Token 0123456789abcdef0123456789abcdef01234567
+    method: GET
+    uri: http://10.1.0.171:8000/api/ipam/ip-addresses/?parent=9.9.9.0%2F24&limit=0
+  response:
+    body:
+      string: '{"count":2,"next":null,"previous":null,"results":[{"id":9,"url":"http://10.1.0.171:8000/api/ipam/ip-addresses/9/","display":"9.9.9.9/32","family":{"value":4,"label":"IPv4"},"address":"9.9.9.9/32","vrf":null,"tenant":null,"status":{"value":"active","label":"Active"},"role":null,"assigned_object_type":"dcim.interface","assigned_object_id":2,"assigned_object":{"id":2,"url":"http://10.1.0.171:8000/api/dcim/interfaces/2/","display":"eth2","device":{"id":1,"url":"http://10.1.0.171:8000/api/dcim/devices/1/","display":"Test1","name":"Test1"},"name":"eth2","cable":null,"_occupied":false},"nat_inside":null,"nat_outside":[],"dns_name":"","description":"","comments":"","tags":[],"custom_fields":{},"created":"2023-02-19T21:22:07.523235Z","last_updated":"2023-02-19T21:22:07.523244Z"},{"id":10,"url":"http://10.1.0.171:8000/api/ipam/ip-addresses/10/","display":"9.9.9.9/32","family":{"value":4,"label":"IPv4"},"address":"9.9.9.9/32","vrf":null,"tenant":null,"status":{"value":"active","label":"Active"},"role":null,"assigned_object_type":"virtualization.vminterface","assigned_object_id":2,"assigned_object":{"id":2,"url":"http://10.1.0.171:8000/api/virtualization/interfaces/2/","display":"eth0","virtual_machine":{"id":2,"url":"http://10.1.0.171:8000/api/virtualization/virtual-machines/2/","display":"TestDuplicateMac","name":"TestDuplicateMac"},"name":"eth0"},"nat_inside":null,"nat_outside":[],"dns_name":"","description":"","comments":"","tags":[{"id":2,"url":"http://10.1.0.171:8000/api/extras/tags/2/","display":"no-dhcp","name":"no-dhcp","slug":"no-dhcp","color":"9e9e9e"}],"custom_fields":{},"created":"2023-02-19T21:23:21.264745Z","last_updated":"2023-02-19T21:31:30.548314Z"}]}'
+    headers:
+      Allow:
+      - GET, POST, PUT, PATCH, DELETE, HEAD, OPTIONS
+      Content-Length:
+      - '1685'
+      Content-Type:
+      - application/json
+      Cross-Origin-Opener-Policy:
+      - same-origin
+      Date:
+      - Sun, 19 Feb 2023 23:06:04 GMT
+      Referrer-Policy:
+      - same-origin
+      Server:
+      - Unit/1.27.0
+      Vary:
+      - Accept, Cookie, Origin
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.28.2
+      accept:
+      - application/json;
+      authorization:
+      - Token 0123456789abcdef0123456789abcdef01234567
+    method: GET
+    uri: http://10.1.0.171:8000/api/dcim/interfaces/2/
+  response:
+    body:
+      string: '{"id":2,"url":"http://10.1.0.171:8000/api/dcim/interfaces/2/","display":"eth2","device":{"id":1,"url":"http://10.1.0.171:8000/api/dcim/devices/1/","display":"Test1","name":"Test1"},"vdcs":[],"module":null,"name":"eth2","label":"","type":{"value":"2.5gbase-t","label":"2.5GBASE-T
+        (2.5GE)"},"enabled":true,"parent":null,"bridge":null,"lag":null,"mtu":null,"mac_address":"74:18:63:53:73:99","speed":null,"duplex":null,"wwn":null,"mgmt_only":false,"description":"","mode":null,"rf_role":null,"rf_channel":null,"poe_mode":null,"poe_type":null,"rf_channel_frequency":null,"rf_channel_width":null,"tx_power":null,"untagged_vlan":null,"tagged_vlans":[],"mark_connected":false,"cable":null,"cable_end":"","wireless_link":null,"link_peers":[],"link_peers_type":null,"wireless_lans":[],"vrf":null,"l2vpn_termination":null,"connected_endpoints":null,"connected_endpoints_type":null,"connected_endpoints_reachable":null,"tags":[],"custom_fields":{},"created":"2023-02-19T21:19:32.139356Z","last_updated":"2023-02-19T21:19:32.139366Z","count_ipaddresses":2,"count_fhrp_groups":0,"_occupied":false}'
+    headers:
+      Allow:
+      - GET, PUT, PATCH, DELETE, HEAD, OPTIONS, TRACE
+      Content-Length:
+      - '1083'
+      Content-Type:
+      - application/json
+      Cross-Origin-Opener-Policy:
+      - same-origin
+      Date:
+      - Sun, 19 Feb 2023 23:06:04 GMT
+      Referrer-Policy:
+      - same-origin
+      Server:
+      - Unit/1.27.0
+      Vary:
+      - Accept, Cookie, Origin
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.28.2
+      accept:
+      - application/json;
+      authorization:
+      - Token 0123456789abcdef0123456789abcdef01234567
+    method: GET
+    uri: http://10.1.0.171:8000/api/virtualization/interfaces/2/
+  response:
+    body:
+      string: '{"id":2,"url":"http://10.1.0.171:8000/api/virtualization/interfaces/2/","display":"eth0","virtual_machine":{"id":2,"url":"http://10.1.0.171:8000/api/virtualization/virtual-machines/2/","display":"TestDuplicateMac","name":"TestDuplicateMac"},"name":"eth0","enabled":true,"parent":null,"bridge":null,"mtu":null,"mac_address":"74:18:63:53:73:60","description":"","mode":null,"untagged_vlan":null,"tagged_vlans":[],"vrf":null,"l2vpn_termination":null,"tags":[],"custom_fields":{},"created":"2023-02-19T15:19:53.910403Z","last_updated":"2023-02-19T15:19:53.910415Z","count_ipaddresses":2,"count_fhrp_groups":0}'
+    headers:
+      Allow:
+      - GET, PUT, PATCH, DELETE, HEAD, OPTIONS
+      Content-Length:
+      - '605'
+      Content-Type:
+      - application/json
+      Cross-Origin-Opener-Policy:
+      - same-origin
+      Date:
+      - Sun, 19 Feb 2023 23:06:04 GMT
+      Referrer-Policy:
+      - same-origin
+      Server:
+      - Unit/1.27.0
+      Vary:
+      - Accept, Cookie, Origin
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.28.2
+      accept:
+      - application/json;
+      authorization:
+      - Token 0123456789abcdef0123456789abcdef01234567
+    method: GET
+    uri: http://10.1.0.171:8000/api/ipam/ip-addresses/?parent=10.1.1.0%2F24&limit=0
+  response:
+    body:
+      string: '{"count":2,"next":null,"previous":null,"results":[{"id":4,"url":"http://10.1.0.171:8000/api/ipam/ip-addresses/4/","display":"10.1.1.1/24","family":{"value":4,"label":"IPv4"},"address":"10.1.1.1/24","vrf":null,"tenant":null,"status":{"value":"active","label":"Active"},"role":null,"assigned_object_type":null,"assigned_object_id":null,"assigned_object":null,"nat_inside":null,"nat_outside":[],"dns_name":"nonworking2.example.com","description":"","comments":"","tags":[{"id":1,"url":"http://10.1.0.171:8000/api/extras/tags/1/","display":"dhcp","name":"dhcp","slug":"dhcp","color":"9e9e9e"},{"id":2,"url":"http://10.1.0.171:8000/api/extras/tags/2/","display":"no-dhcp","name":"no-dhcp","slug":"no-dhcp","color":"9e9e9e"}],"custom_fields":{},"created":"2023-02-19T03:03:05.043442Z","last_updated":"2023-02-19T18:13:06.372014Z"},{"id":8,"url":"http://10.1.0.171:8000/api/ipam/ip-addresses/8/","display":"10.1.1.1/24","family":{"value":4,"label":"IPv4"},"address":"10.1.1.1/24","vrf":null,"tenant":null,"status":{"value":"active","label":"Active"},"role":null,"assigned_object_type":null,"assigned_object_id":null,"assigned_object":null,"nat_inside":null,"nat_outside":[],"dns_name":"duplicateip.example.com","description":"","comments":"","tags":[{"id":2,"url":"http://10.1.0.171:8000/api/extras/tags/2/","display":"no-dhcp","name":"no-dhcp","slug":"no-dhcp","color":"9e9e9e"}],"custom_fields":{},"created":"2023-02-19T18:31:46.711288Z","last_updated":"2023-02-19T18:34:42.971132Z"}]}'
+    headers:
+      Allow:
+      - GET, POST, PUT, PATCH, DELETE, HEAD, OPTIONS
+      Content-Length:
+      - '1480'
+      Content-Type:
+      - application/json
+      Cross-Origin-Opener-Policy:
+      - same-origin
+      Date:
+      - Sun, 19 Feb 2023 23:06:04 GMT
+      Referrer-Policy:
+      - same-origin
+      Server:
+      - Unit/1.27.0
+      Vary:
+      - Accept, Cookie, Origin
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.28.2
+      accept:
+      - application/json;
+      authorization:
+      - Token 0123456789abcdef0123456789abcdef01234567
+    method: GET
+    uri: http://10.1.0.171:8000/api/ipam/ip-addresses/?parent=2a00%3A%3A%2F22&limit=0
+  response:
+    body:
+      string: '{"count":2,"next":null,"previous":null,"results":[{"id":11,"url":"http://10.1.0.171:8000/api/ipam/ip-addresses/11/","display":"2a00::1/128","family":{"value":6,"label":"IPv6"},"address":"2a00::1/128","vrf":null,"tenant":null,"status":{"value":"active","label":"Active"},"role":null,"assigned_object_type":"dcim.interface","assigned_object_id":2,"assigned_object":{"id":2,"url":"http://10.1.0.171:8000/api/dcim/interfaces/2/","display":"eth2","device":{"id":1,"url":"http://10.1.0.171:8000/api/dcim/devices/1/","display":"Test1","name":"Test1"},"name":"eth2","cable":null,"_occupied":false},"nat_inside":null,"nat_outside":[],"dns_name":"","description":"","comments":"","tags":[],"custom_fields":{},"created":"2023-02-19T22:12:27.788222Z","last_updated":"2023-02-19T22:14:32.396934Z"},{"id":12,"url":"http://10.1.0.171:8000/api/ipam/ip-addresses/12/","display":"2a00::1/128","family":{"value":6,"label":"IPv6"},"address":"2a00::1/128","vrf":null,"tenant":null,"status":{"value":"active","label":"Active"},"role":null,"assigned_object_type":"dcim.interface","assigned_object_id":3,"assigned_object":{"id":3,"url":"http://10.1.0.171:8000/api/dcim/interfaces/3/","display":"eth9","device":{"id":1,"url":"http://10.1.0.171:8000/api/dcim/devices/1/","display":"Test1","name":"Test1"},"name":"eth9","cable":null,"_occupied":false},"nat_inside":null,"nat_outside":[],"dns_name":"","description":"","comments":"","tags":[],"custom_fields":{},"created":"2023-02-19T22:56:13.789101Z","last_updated":"2023-02-19T22:56:13.789116Z"}]}'
+    headers:
+      Allow:
+      - GET, POST, PUT, PATCH, DELETE, HEAD, OPTIONS
+      Content-Length:
+      - '1521'
+      Content-Type:
+      - application/json
+      Cross-Origin-Opener-Policy:
+      - same-origin
+      Date:
+      - Sun, 19 Feb 2023 23:06:04 GMT
+      Referrer-Policy:
+      - same-origin
+      Server:
+      - Unit/1.27.0
+      Vary:
+      - Accept, Cookie, Origin
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.28.2
+      accept:
+      - application/json;
+      authorization:
+      - Token 0123456789abcdef0123456789abcdef01234567
+    method: GET
+    uri: http://10.1.0.171:8000/api/dcim/interfaces/2/
+  response:
+    body:
+      string: '{"id":2,"url":"http://10.1.0.171:8000/api/dcim/interfaces/2/","display":"eth2","device":{"id":1,"url":"http://10.1.0.171:8000/api/dcim/devices/1/","display":"Test1","name":"Test1"},"vdcs":[],"module":null,"name":"eth2","label":"","type":{"value":"2.5gbase-t","label":"2.5GBASE-T
+        (2.5GE)"},"enabled":true,"parent":null,"bridge":null,"lag":null,"mtu":null,"mac_address":"74:18:63:53:73:99","speed":null,"duplex":null,"wwn":null,"mgmt_only":false,"description":"","mode":null,"rf_role":null,"rf_channel":null,"poe_mode":null,"poe_type":null,"rf_channel_frequency":null,"rf_channel_width":null,"tx_power":null,"untagged_vlan":null,"tagged_vlans":[],"mark_connected":false,"cable":null,"cable_end":"","wireless_link":null,"link_peers":[],"link_peers_type":null,"wireless_lans":[],"vrf":null,"l2vpn_termination":null,"connected_endpoints":null,"connected_endpoints_type":null,"connected_endpoints_reachable":null,"tags":[],"custom_fields":{},"created":"2023-02-19T21:19:32.139356Z","last_updated":"2023-02-19T21:19:32.139366Z","count_ipaddresses":2,"count_fhrp_groups":0,"_occupied":false}'
+    headers:
+      Allow:
+      - GET, PUT, PATCH, DELETE, HEAD, OPTIONS, TRACE
+      Content-Length:
+      - '1083'
+      Content-Type:
+      - application/json
+      Cross-Origin-Opener-Policy:
+      - same-origin
+      Date:
+      - Sun, 19 Feb 2023 23:06:04 GMT
+      Referrer-Policy:
+      - same-origin
+      Server:
+      - Unit/1.27.0
+      Vary:
+      - Accept, Cookie, Origin
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.28.2
+      accept:
+      - application/json;
+      authorization:
+      - Token 0123456789abcdef0123456789abcdef01234567
+    method: GET
+    uri: http://10.1.0.171:8000/api/dcim/interfaces/3/
+  response:
+    body:
+      string: '{"id":3,"url":"http://10.1.0.171:8000/api/dcim/interfaces/3/","display":"eth9","device":{"id":1,"url":"http://10.1.0.171:8000/api/dcim/devices/1/","display":"Test1","name":"Test1"},"vdcs":[],"module":null,"name":"eth9","label":"","type":{"value":"10gbase-t","label":"10GBASE-T
+        (10GE)"},"enabled":true,"parent":null,"bridge":null,"lag":null,"mtu":null,"mac_address":"74:18:63:53:73:11","speed":null,"duplex":null,"wwn":null,"mgmt_only":false,"description":"","mode":null,"rf_role":null,"rf_channel":null,"poe_mode":null,"poe_type":null,"rf_channel_frequency":null,"rf_channel_width":null,"tx_power":null,"untagged_vlan":null,"tagged_vlans":[],"mark_connected":false,"cable":null,"cable_end":"","wireless_link":null,"link_peers":[],"link_peers_type":null,"wireless_lans":[],"vrf":null,"l2vpn_termination":null,"connected_endpoints":null,"connected_endpoints_type":null,"connected_endpoints_reachable":null,"tags":[],"custom_fields":{},"created":"2023-02-19T22:56:02.396452Z","last_updated":"2023-02-19T22:56:02.396463Z","count_ipaddresses":1,"count_fhrp_groups":0,"_occupied":false}'
+    headers:
+      Allow:
+      - GET, PUT, PATCH, DELETE, HEAD, OPTIONS, TRACE
+      Content-Length:
+      - '1080'
+      Content-Type:
+      - application/json
+      Cross-Origin-Opener-Policy:
+      - same-origin
+      Date:
+      - Sun, 19 Feb 2023 23:06:04 GMT
+      Referrer-Policy:
+      - same-origin
+      Server:
+      - Unit/1.27.0
+      Vary:
+      - Accept, Cookie, Origin
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+    status:
+      code: 200
+      message: OK
+version: 1

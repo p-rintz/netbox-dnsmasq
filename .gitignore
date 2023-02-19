@@ -3,3 +3,6 @@
 venv
 dhcphosts.conf
 dnsmasq.hosts
+/Dockerfile-* # Test Dockerfiles
+.coverage
+
