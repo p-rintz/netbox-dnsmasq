@@ -23,7 +23,7 @@ jobs:
         with:
           options: "--check --verbose"
       - name: mypy Lint
-        uses: python/mypy-action@v1
+        uses: jpetrucciani/mypy-check@master
         with:
           mypy_flags: "--exclude .git --exclude __pycache__ --exclude venv --exclude .mypy_cache --exclude build --exclude dist --ignore-missing-imports --show-error-context"
       - name: flake8 Lint
