@@ -10,7 +10,7 @@ python3 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
 ```
-**Python 3.9 or higher is required.**
+**Python 3.7 or higher is required.**
 
 ### Config locations
 
