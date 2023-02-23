@@ -1,0 +1,37 @@
+name: Python Lint
+on: [push, pull_request]
+matrix:
+  python_version: [3.6, 3.7, 3.8, 3.9, 3.10, 3.11]
+jobs:
+  isort:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v2
+        with:
+          python-version: ${{ matrix.python_version }}
+      - name: isort Lint
+        uses: isort/isort-action@master
+        with:
+            requirementsFiles: "requirements.txt requirements_dev.txt"
+            configuration:
+              - --check-only
+              - --diff
+              - --profile black
+      - name: black Lint
+        uses: psf/black@stable
+        with:
+          options: "--check --verbose"
+      - name: mypy Lint
+        uses: python/mypy-action@v1
+        with:
+          mypy_flags: "--exclude .git --exclude __pycache__ --exclude venv --exclude .mypy_cache --exclude build --exclude dist --ignore-missing-imports --show-error-context"
+      - name: flake8 Lint
+        uses: py-actions/flake8@v2
+        with:
+          exclude: ".git,__pycache__,venv,.mypy_cache,build,dist"
+          args: "--extend-ignore=E203,E501 --count --show-source --statistics"
+          max-line-length: "88"
+          plugins: "flake8-black"
