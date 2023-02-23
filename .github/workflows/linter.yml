@@ -1,10 +1,11 @@
 name: Python Lint
 on: [push, pull_request]
-matrix:
-  python_version: [3.6, 3.7, 3.8, 3.9, 3.10, 3.11]
 jobs:
-  isort:
+  linter:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python_version: [3.6, 3.7, 3.8, 3.9, 3.10, 3.11]
     steps:
       - uses: actions/checkout@v3
         with:
@@ -16,10 +17,7 @@ jobs:
         uses: isort/isort-action@master
         with:
             requirementsFiles: "requirements.txt requirements_dev.txt"
-            configuration:
-              - --check-only
-              - --diff
-              - --profile black
+            configuration: "--check-only --diff --profile black"
       - name: black Lint
         uses: psf/black@stable
         with:
