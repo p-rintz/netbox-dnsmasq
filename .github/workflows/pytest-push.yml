@@ -2,6 +2,8 @@
 name: Update Coverage in Readme
 on:
   push:
+    branches:
+      - '**'
 jobs:
   update-coverage-on-readme:
     runs-on: ubuntu-latest
