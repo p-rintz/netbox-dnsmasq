@@ -2,7 +2,7 @@
 Create dnsmasq DHCP/DNS configs using the Netbox API.
 
 <!-- Pytest Coverage Comment:Begin -->
-<!-- Pytest Coverage Comment:End -->
+\n<!-- Pytest Coverage Comment:End -->
 
 ## Configuration
 
