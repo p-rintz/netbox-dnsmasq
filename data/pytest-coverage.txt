@@ -4,14 +4,12 @@ rootdir: /home/runner/work/netbox-dnsmasq/netbox-dnsmasq
 plugins: cov-4.0.0, recording-0.12.2
 collected 14 items
 
-tests/test_netbox-dnsmasq.py .............F                              [100%]WARNING: Failed to generate report: No data to report.
-
-
+tests/test_netbox-dnsmasq.py .............F                              [100%]
 
 =================================== FAILURES ===================================
 ________________________________ test_main_run _________________________________
 
-self = <urllib3.connection.HTTPConnection object at 0x7f77a3c1f150>
+self = <urllib3.connection.HTTPConnection object at 0x7f0f8f6ea090>
 
     def _new_conn(self):
         """Establish a socket connection and set nodelay settings on it.
@@ -157,7 +155,7 @@ E               TimeoutError: [Errno 110] Connection timed out
 
 During handling of the above exception, another exception occurred:
 
-self = <urllib3.connectionpool.HTTPConnectionPool object at 0x7f77a3c2d150>
+self = <urllib3.connectionpool.HTTPConnectionPool object at 0x7f0f8f375e50>
 method = 'GET', url = '/api/ipam/ip-addresses/?tag=no-dhcp&limit=0', body = None
 headers = {'User-Agent': 'python-requests/2.28.2', 'Accept-Encoding': 'gzip, deflate', 'accept': 'application/json;', 'Connection': 'keep-alive', 'authorization': 'Token 0123456789abcdef0123456789abcdef01234567'}
 retries = Retry(total=0, connect=None, read=False, redirect=None, status=None)
@@ -363,8 +361,8 @@ http_tunnel_required = False, err = None, clean_exit = False
 /opt/hostedtoolcache/Python/3.11.2/x64/lib/python3.11/site-packages/urllib3/connectionpool.py:703: 
 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
 
-self = <urllib3.connectionpool.HTTPConnectionPool object at 0x7f77a3c2d150>
-conn = <urllib3.connection.HTTPConnection object at 0x7f77a3c1f150>
+self = <urllib3.connectionpool.HTTPConnectionPool object at 0x7f0f8f375e50>
+conn = <urllib3.connection.HTTPConnection object at 0x7f0f8f6ea090>
 method = 'GET', url = '/api/ipam/ip-addresses/?tag=no-dhcp&limit=0'
 timeout = Timeout(connect=None, read=None, total=None), chunked = False
 httplib_request_kw = {'body': None, 'headers': {'User-Agent': 'python-requests/2.28.2', 'Accept-Encoding': 'gzip, deflate', 'accept': 'application/json;', 'Connection': 'keep-alive', 'authorization': 'Token 0123456789abcdef0123456789abcdef01234567'}}
@@ -412,7 +410,7 @@ timeout_obj = Timeout(connect=None, read=None, total=None)
 /opt/hostedtoolcache/Python/3.11.2/x64/lib/python3.11/site-packages/urllib3/connectionpool.py:398: 
 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
 
-self = <urllib3.connection.HTTPConnection object at 0x7f77a3c1f150>
+self = <urllib3.connection.HTTPConnection object at 0x7f0f8f6ea090>
 method = 'GET', url = '/api/ipam/ip-addresses/?tag=no-dhcp&limit=0', body = None
 headers = {'User-Agent': 'python-requests/2.28.2', 'Accept-Encoding': 'gzip, deflate', 'accept': 'application/json;', 'Connection': 'keep-alive', 'authorization': 'Token 0123456789abcdef0123456789abcdef01234567'}
 
@@ -429,7 +427,7 @@ headers = {'User-Agent': 'python-requests/2.28.2', 'Accept-Encoding': 'gzip, def
 /opt/hostedtoolcache/Python/3.11.2/x64/lib/python3.11/site-packages/urllib3/connection.py:239: 
 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
 
-self = <urllib3.connection.HTTPConnection object at 0x7f77a3c1f150>
+self = <urllib3.connection.HTTPConnection object at 0x7f0f8f6ea090>
 method = 'GET', url = '/api/ipam/ip-addresses/?tag=no-dhcp&limit=0', body = None
 headers = {'User-Agent': 'python-requests/2.28.2', 'Accept-Encoding': 'gzip, deflate', 'accept': 'application/json;', 'Connection': 'keep-alive', 'authorization': 'Token 0123456789abcdef0123456789abcdef01234567'}
 
@@ -441,7 +439,7 @@ headers = {'User-Agent': 'python-requests/2.28.2', 'Accept-Encoding': 'gzip, def
 /opt/hostedtoolcache/Python/3.11.2/x64/lib/python3.11/http/client.py:1282: 
 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
 
-self = <urllib3.connection.HTTPConnection object at 0x7f77a3c1f150>
+self = <urllib3.connection.HTTPConnection object at 0x7f0f8f6ea090>
 method = 'GET', url = '/api/ipam/ip-addresses/?tag=no-dhcp&limit=0', body = None
 headers = {'User-Agent': 'python-requests/2.28.2', 'Accept-Encoding': 'gzip, deflate', 'accept': 'application/json;', 'Connection': 'keep-alive', 'authorization': 'Token 0123456789abcdef0123456789abcdef01234567'}
 encode_chunked = False
@@ -495,7 +493,7 @@ encode_chunked = False
 /opt/hostedtoolcache/Python/3.11.2/x64/lib/python3.11/http/client.py:1328: 
 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
 
-self = <urllib3.connection.HTTPConnection object at 0x7f77a3c1f150>
+self = <urllib3.connection.HTTPConnection object at 0x7f0f8f6ea090>
 message_body = None
 
     def endheaders(self, message_body=None, *, encode_chunked=False):
@@ -514,7 +512,7 @@ message_body = None
 /opt/hostedtoolcache/Python/3.11.2/x64/lib/python3.11/http/client.py:1277: 
 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
 
-self = <urllib3.connection.HTTPConnection object at 0x7f77a3c1f150>
+self = <urllib3.connection.HTTPConnection object at 0x7f0f8f6ea090>
 message_body = None, encode_chunked = False
 
     def _send_output(self, message_body=None, encode_chunked=False):
@@ -531,7 +529,7 @@ message_body = None, encode_chunked = False
 /opt/hostedtoolcache/Python/3.11.2/x64/lib/python3.11/http/client.py:1037: 
 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
 
-self = <urllib3.connection.HTTPConnection object at 0x7f77a3c1f150>
+self = <urllib3.connection.HTTPConnection object at 0x7f0f8f6ea090>
 data = b'GET /api/ipam/ip-addresses/?tag=no-dhcp&limit=0 HTTP/1.1\r\nHost: 10.1.0.171:8000\r\nUser-Agent: python-requests/2.2...: application/json;\r\nConnection: keep-alive\r\nauthorization: Token 0123456789abcdef0123456789abcdef01234567\r\n\r\n'
 
     def send(self, data):
@@ -547,7 +545,7 @@ data = b'GET /api/ipam/ip-addresses/?tag=no-dhcp&limit=0 HTTP/1.1\r\nHost: 10.1.
 /opt/hostedtoolcache/Python/3.11.2/x64/lib/python3.11/http/client.py:975: 
 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
 
-self = <urllib3.connection.HTTPConnection object at 0x7f77a3c1f150>
+self = <urllib3.connection.HTTPConnection object at 0x7f0f8f6ea090>
 
     def connect(self):
 >       conn = self._new_conn()
@@ -555,7 +553,7 @@ self = <urllib3.connection.HTTPConnection object at 0x7f77a3c1f150>
 /opt/hostedtoolcache/Python/3.11.2/x64/lib/python3.11/site-packages/urllib3/connection.py:205: 
 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
 
-self = <urllib3.connection.HTTPConnection object at 0x7f77a3c1f150>
+self = <urllib3.connection.HTTPConnection object at 0x7f0f8f6ea090>
 
     def _new_conn(self):
         """Establish a socket connection and set nodelay settings on it.
@@ -580,13 +578,13 @@ self = <urllib3.connection.HTTPConnection object at 0x7f77a3c1f150>
                 "Connection to %s timed out. (connect timeout=%s)"
                 % (self.host, self.timeout),
             )
-E           urllib3.exceptions.ConnectTimeoutError: (<urllib3.connection.HTTPConnection object at 0x7f77a3c1f150>, 'Connection to 10.1.0.171 timed out. (connect timeout=None)')
+E           urllib3.exceptions.ConnectTimeoutError: (<urllib3.connection.HTTPConnection object at 0x7f0f8f6ea090>, 'Connection to 10.1.0.171 timed out. (connect timeout=None)')
 
 /opt/hostedtoolcache/Python/3.11.2/x64/lib/python3.11/site-packages/urllib3/connection.py:179: ConnectTimeoutError
 
 During handling of the above exception, another exception occurred:
 
-self = <requests.adapters.HTTPAdapter object at 0x7f77a3c1f050>
+self = <requests.adapters.HTTPAdapter object at 0x7f0f8f37ddd0>
 request = <PreparedRequest [GET]>, stream = False
 timeout = Timeout(connect=None, read=None, total=None), verify = True
 cert = None, proxies = OrderedDict()
@@ -660,7 +658,7 @@ cert = None, proxies = OrderedDict()
 /opt/hostedtoolcache/Python/3.11.2/x64/lib/python3.11/site-packages/requests/adapters.py:489: 
 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
 
-self = <urllib3.connectionpool.HTTPConnectionPool object at 0x7f77a3c2d150>
+self = <urllib3.connectionpool.HTTPConnectionPool object at 0x7f0f8f375e50>
 method = 'GET', url = '/api/ipam/ip-addresses/?tag=no-dhcp&limit=0', body = None
 headers = {'User-Agent': 'python-requests/2.28.2', 'Accept-Encoding': 'gzip, deflate', 'accept': 'application/json;', 'Connection': 'keep-alive', 'authorization': 'Token 0123456789abcdef0123456789abcdef01234567'}
 retries = Retry(total=0, connect=None, read=False, redirect=None, status=None)
@@ -947,9 +945,9 @@ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
 self = Retry(total=0, connect=None, read=False, redirect=None, status=None)
 method = 'GET', url = '/api/ipam/ip-addresses/?tag=no-dhcp&limit=0'
 response = None
-error = ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x7f77a3c1f150>, 'Connection to 10.1.0.171 timed out. (connect timeout=None)')
-_pool = <urllib3.connectionpool.HTTPConnectionPool object at 0x7f77a3c2d150>
-_stacktrace = <traceback object at 0x7f77a3c2c540>
+error = ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x7f0f8f6ea090>, 'Connection to 10.1.0.171 timed out. (connect timeout=None)')
+_pool = <urllib3.connectionpool.HTTPConnectionPool object at 0x7f0f8f375e50>
+_stacktrace = <traceback object at 0x7f0f8f387700>
 
     def increment(
         self,
@@ -1040,13 +1038,13 @@ _stacktrace = <traceback object at 0x7f77a3c2c540>
     
         if new_retry.is_exhausted():
 >           raise MaxRetryError(_pool, url, error or ResponseError(cause))
-E           urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='10.1.0.171', port=8000): Max retries exceeded with url: /api/ipam/ip-addresses/?tag=no-dhcp&limit=0 (Caused by ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x7f77a3c1f150>, 'Connection to 10.1.0.171 timed out. (connect timeout=None)'))
+E           urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='10.1.0.171', port=8000): Max retries exceeded with url: /api/ipam/ip-addresses/?tag=no-dhcp&limit=0 (Caused by ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x7f0f8f6ea090>, 'Connection to 10.1.0.171 timed out. (connect timeout=None)'))
 
 /opt/hostedtoolcache/Python/3.11.2/x64/lib/python3.11/site-packages/urllib3/util/retry.py:592: MaxRetryError
 
 During handling of the above exception, another exception occurred:
 
-capsys = <_pytest.capture.CaptureFixture object at 0x7f77a400fb90>
+capsys = <_pytest.capture.CaptureFixture object at 0x7f0f8f37f690>
 set_test_environment = None
 
     def test_main_run(capsys, set_test_environment):
@@ -1080,7 +1078,7 @@ netbox_dnsmasq.py:147: in get_ip_data
     r = adapter.send(request, **kwargs)
 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
 
-self = <requests.adapters.HTTPAdapter object at 0x7f77a3c1f050>
+self = <requests.adapters.HTTPAdapter object at 0x7f0f8f37ddd0>
 request = <PreparedRequest [GET]>, stream = False
 timeout = Timeout(connect=None, read=None, total=None), verify = True
 cert = None, proxies = OrderedDict()
@@ -1203,16 +1201,24 @@ cert = None, proxies = OrderedDict()
                 # TODO: Remove this in 3.0.0: see #2811
                 if not isinstance(e.reason, NewConnectionError):
 >                   raise ConnectTimeout(e, request=request)
-E                   requests.exceptions.ConnectTimeout: HTTPConnectionPool(host='10.1.0.171', port=8000): Max retries exceeded with url: /api/ipam/ip-addresses/?tag=no-dhcp&limit=0 (Caused by ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x7f77a3c1f150>, 'Connection to 10.1.0.171 timed out. (connect timeout=None)'))
+E                   requests.exceptions.ConnectTimeout: HTTPConnectionPool(host='10.1.0.171', port=8000): Max retries exceeded with url: /api/ipam/ip-addresses/?tag=no-dhcp&limit=0 (Caused by ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x7f0f8f6ea090>, 'Connection to 10.1.0.171 timed out. (connect timeout=None)'))
 
 /opt/hostedtoolcache/Python/3.11.2/x64/lib/python3.11/site-packages/requests/adapters.py:553: ConnectTimeout
 ----------------------------- Captured stderr call -----------------------------
-2023-02-27 02:39:11.643 | DEBUG    | netbox_dnsmasq:import_config:41 - Netbox endpoint is http://10.1.0.171:8000
-2023-02-27 02:39:11.643 | DEBUG    | netbox_dnsmasq:import_config:42 - Config file locations are dhcphosts.conf and dnsmasq.hosts
+2023-02-27 02:48:42.507 | DEBUG    | netbox_dnsmasq:import_config:41 - Netbox endpoint is http://10.1.0.171:8000
+2023-02-27 02:48:42.507 | DEBUG    | netbox_dnsmasq:import_config:42 - Config file locations are dhcphosts.conf and dnsmasq.hosts
 - generated xml file: /home/runner/work/netbox-dnsmasq/netbox-dnsmasq/pytest.xml -
 
 ---------- coverage: platform linux, python 3.11.2-final-0 -----------
+Name                           Stmts   Miss  Cover
+--------------------------------------------------
+netbox_dnsmasq.py                180     13    93%
+tests/__init__.py                  0      0   100%
+tests/conftest.py                 29      0   100%
+tests/test_netbox-dnsmasq.py      74      3    96%
+--------------------------------------------------
+TOTAL                            283     16    94%
 
 =========================== short test summary info ============================
-FAILED tests/test_netbox-dnsmasq.py::test_main_run - requests.exceptions.ConnectTimeout: HTTPConnectionPool(host='10.1.0.171', port=8000): Max retries exceeded with url: /api/ipam/ip-addresses/?tag=no-dhcp&limit=0 (Caused by ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x7f77a3c1f150>, 'Connection to 10.1.0.171 timed out. (connect timeout=None)'))
-=================== 1 failed, 13 passed in 131.76s (0:02:11) ===================
+FAILED tests/test_netbox-dnsmasq.py::test_main_run - requests.exceptions.ConnectTimeout: HTTPConnectionPool(host='10.1.0.171', port=8000): Max retries exceeded with url: /api/ipam/ip-addresses/?tag=no-dhcp&limit=0 (Caused by ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x7f0f8f6ea090>, 'Connection to 10.1.0.171 timed out. (connect timeout=None)'))
+=================== 1 failed, 13 passed in 130.99s (0:02:10) ===================
