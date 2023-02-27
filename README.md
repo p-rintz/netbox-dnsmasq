@@ -1,7 +1,7 @@
 # Netbox-dnsmasq
-<!-- Pytest Coverage Comment:Begin -->
+![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/p-rintz/netbox-dnsmasq/pytest-push.yml)![GitHub](https://img.shields.io/github/license/p-rintz/netbox-dnsmasq?color=brightgreen&style=flat)<!-- Pytest Coverage Comment:Begin -->
 <a href="https://github.com/p-rintz/netbox-dnsmasq/blob/main/README.md"><img alt="Coverage" src="https://img.shields.io/badge/Coverage-97%25-brightgreen.svg" /></a><details><summary>Coverage Report </summary><table><tr><th>File</th><th>Stmts</th><th>Miss</th><th>Cover</th><th>Missing</th></tr><tbody><tr><td><a href="https://github.com/p-rintz/netbox-dnsmasq/blob/main/netbox_dnsmasq.py">netbox_dnsmasq.py</a></td><td>180</td><td>8</td><td>8</td><td><a href="https://github.com/p-rintz/netbox-dnsmasq/blob/main/netbox_dnsmasq.py#L 96%"> 96%</a></td></tr><tr><td colspan="5"><b>tests</b></td></tr><tr><td>&nbsp; &nbsp;<a href="https://github.com/p-rintz/netbox-dnsmasq/blob/main/tests/__init__.py">__init__.py</a></td><td>0</td><td>0</td><td>100%</td><td>&nbsp;</td></tr><tr><td>&nbsp; &nbsp;<a href="https://github.com/p-rintz/netbox-dnsmasq/blob/main/tests/conftest.py">conftest.py</a></td><td>29</td><td>0</td><td>100%</td><td>&nbsp;</td></tr><tr><td>&nbsp; &nbsp;<a href="https://github.com/p-rintz/netbox-dnsmasq/blob/main/tests/test_netbox-dnsmasq.py">test_netbox-dnsmasq.py</a></td><td>76</td><td>0</td><td>100%</td><td>&nbsp;</td></tr><tr><td><b>TOTAL</b></td><td><b>285</b></td><td><b>8</b></td><td><b>97%</b></td><td>&nbsp;</td></tr></tbody></table></details>
-<!-- Pytest Coverage Comment:End -->![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/p-rintz/netbox-dnsmasq/pytest-push.yml)![GitHub](https://img.shields.io/github/license/p-rintz/netbox-dnsmasq?color=brightgreen&style=flat)
+<!-- Pytest Coverage Comment:End -->
 
 Create dnsmasq DHCP/DNS configs using the Netbox API.
 
