@@ -1,0 +1,21 @@
+============================= test session starts ==============================
+platform linux -- Python 3.11.2, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/runner/work/netbox-dnsmasq/netbox-dnsmasq
+plugins: cov-4.0.0, recording-0.12.2
+collected 14 items
+
+tests/test_netbox-dnsmasq.py ..............                              [100%]
+
+- generated xml file: /home/runner/work/netbox-dnsmasq/netbox-dnsmasq/pytest.xml -
+
+---------- coverage: platform linux, python 3.11.2-final-0 -----------
+Name                           Stmts   Miss  Cover
+--------------------------------------------------
+netbox_dnsmasq.py                180      8    96%
+tests/__init__.py                  0      0   100%
+tests/conftest.py                 29      0   100%
+tests/test_netbox-dnsmasq.py      76      0   100%
+--------------------------------------------------
+TOTAL                            285      8    97%
+
+============================== 14 passed in 1.36s ==============================
