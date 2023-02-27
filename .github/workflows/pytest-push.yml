@@ -11,6 +11,16 @@ jobs:
           persist-credentials: false # otherwise, the token used is the GITHUB_TOKEN, instead of your personal token
           fetch-depth: 0 # otherwise, you will failed to push refs to dest repo
 
+      - uses: actions/setup-python@v4
+        with:
+          python-version: 3.11
+
+      - name: Install dependencies
+        run: |
+          python3 -m pip install --upgrade pip
+          pip3 install flake8 pytest pytest-cov
+          if [ -f requirements_dev.txt ]; then pip3 install -r requirements_dev.txt; fi
+
       - name: Build coverage file
         run: |
           pytest --junitxml=pytest.xml --cov-report=term-missing:skip-covered --cov=app tests/ | tee data/pytest-coverage.txt
