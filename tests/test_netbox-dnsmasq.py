@@ -224,6 +224,8 @@ def test_main_help(capsys, option):
         )
 
 
+@pytest.mark.default_cassette("test_get_ip_data.yaml")
+@pytest.mark.vcr
 def test_main_run(capsys, set_test_environment):
     """
     Test main function for correctly starting the script.
