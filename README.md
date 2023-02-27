@@ -1,6 +1,9 @@
 # Netbox-dnsmasq
 Create dnsmasq DHCP/DNS configs using the Netbox API.
 
+<!-- Pytest Coverage Comment:Begin -->
+<!-- Pytest Coverage Comment:End -->
+
 ## Configuration
 
 **Set your Netbox Instance as a environment variable `NETBOX_ENDPOINT` and your API token as `NETBOX_TOKEN`**  
