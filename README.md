@@ -28,6 +28,9 @@ If you like, you can change both tags to something else by using the `--tag` and
 This python script will also use other tags applied to the IP address and use them as the Set for dnsmasq.  
 This is important if you have multiple Vlans for example and want dnsmasq to manage the different options based on the sets.
 
+**Please be aware that only one tag can be used for set in dnsmasq.**  
+Every tag after the first will be ignored and warned about.  
+
 ### DNS Config
 **IP's** that should be installed in the DNS config, by default, need to be tagged with the tag "no-dhcp" in Netbox.  
 You can change this tag to something else by using the `--dns-tag` CLI parameter.
@@ -102,7 +105,4 @@ dhcp-option = option:dns-server, 10.0.0.2
 
 ## Roadmap:
 - Enable setting of config file locations via CLI
-- Finish tests
-  - Test coverage is currently at 87%
-- Add CI pipeline
 - Suggestions welcome

@@ -215,7 +215,12 @@ def format_dhcp(data: dict) -> list:
         if len(data[ip]["hostname"]) > 0:
             host.append(f",{data[ip]['hostname']}")
         for tag in data[ip]["tags"]:
-            host.append(f",set:{tag.slug}")
+            if "set:" in host[-1]:
+                logger.warning(
+                    f"More than one tag for DHCP IP {ip} found. " f"Skipping tag {tag}."
+                )
+                continue
+            host.append(f",set:{tag}")
         host.append("\n")
         line_host = "".join(host)
         dhcp_list.append(line_host)
@@ -289,7 +294,13 @@ def restart_service() -> None:
         exit(1)
 
 
-if __name__ == "__main__":
+def main() -> None:
+    """
+    Run argparse and start the script.
+
+    Returns:
+        None
+    """
     parser = argparse.ArgumentParser()
     parser.add_argument(
         "-d", "--debug", action="store_true", help="more verbose feedback"
@@ -345,3 +356,7 @@ if __name__ == "__main__":
     )
     if not args.dev:
         restart_service()
+
+
+if __name__ == "__main__":
+    main()

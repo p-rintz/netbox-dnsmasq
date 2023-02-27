@@ -1,5 +1,6 @@
 """Test suite for netbox-dnsmasq."""
 import os
+from unittest.mock import patch
 
 import pytest
 
@@ -9,6 +10,7 @@ from netbox_dnsmasq import (
     format_dns,
     get_ip_data,
     import_config,
+    main,
     write_config,
 )
 
@@ -56,10 +58,12 @@ def test_write_config(caplog, example_netbox_data, tmp_path):
     """
     Test write_config function for correctly writing the dhcp and dns config files.
 
-    Also test that the function raises a PermissionError when it is not able to write the config files.
+    Also test that the function raises a PermissionError when it is not able to write
+    the config files.
     Args:
         caplog: Pytest fixture for capturing log output
         example_netbox_data: Pytest fixture for example Netbox data
+        tmp_path: Pytest fixture for temporary path
     """
     dhcp_loc = tmp_path / "dhcp.conf"
     dns_loc = tmp_path / "dns.conf"
@@ -74,6 +78,28 @@ def test_write_config(caplog, example_netbox_data, tmp_path):
     assert "ERROR" not in caplog.text
 
 
+def test_write_config_denied(caplog, example_netbox_data, non_permissive_tmp_path):
+    """
+    Test write_config function for correctly raising a PermissionError.
+
+    This tests the function for when it is not able to write the config files.
+    Args:
+        caplog: Pytest fixture for capturing log output
+        example_netbox_data: Pytest fixture for example Netbox data
+        non_permissive_tmp_path: Pytest fixture for temporary path that is not writable
+    """
+    dhcp_loc = non_permissive_tmp_path / "dhcp.conf"
+    dns_loc = non_permissive_tmp_path / "dns.conf"
+    with pytest.raises(PermissionError):
+        write_config(
+            dhcplist=example_netbox_data["formatted_dhcp"],
+            dnslist=example_netbox_data["formatted_dns"],
+            dhcp_loc=dhcp_loc,
+            dns_loc=dns_loc,
+        )
+    assert 'Received error "Permission denied" while writing config' in caplog.text
+
+
 @pytest.mark.vcr
 def test_get_ip_data(
     caplog, example_netbox_data, example_config_data, set_test_environment
@@ -82,7 +108,8 @@ def test_get_ip_data(
     Test get_ip_data function for correct output as described in the example_netbox_data fixture.
 
     Will use VCR to record and replay API calls to Netbox.
-    Default vcrpy setting is record_mode='none', which means that it will only replay previously recorded API calls.
+    Default vcrpy setting is record_mode='none', which means that it will only replay
+    previously recorded API calls.
     Args:
         caplog: Pytest fixture for capturing log output
         example_netbox_data: Pytest fixture for example Netbox data
@@ -139,7 +166,8 @@ def test_check_duplicates_no_remove(caplog, example_netbox_data):
     assert "ERROR" not in caplog.text
 
 
-def test_import_config(caplog, set_test_environment):
+@pytest.mark.parametrize("option", (True, False))
+def test_import_config(caplog, set_test_environment, option):
     """
     Test import_config function for correct output in both dev and non-dev mode.
 
@@ -152,23 +180,15 @@ def test_import_config(caplog, set_test_environment):
         netbox_token,
         dhcp_config_location,
         dns_hosts_location,
-    ) = import_config(dev=True)
+    ) = import_config(dev=option)
     assert netbox_endpoint == os.environ["NETBOX_ENDPOINT"]
     assert netbox_token == os.environ["NETBOX_TOKEN"]
-    assert dhcp_config_location == "dhcphosts.conf"
-    assert dns_hosts_location == "dnsmasq.hosts"
-    assert "ERROR" not in caplog.text
-
-    (
-        netbox_endpoint,
-        netbox_token,
-        dhcp_config_location,
-        dns_hosts_location,
-    ) = import_config(dev=False)
-    assert netbox_endpoint == os.environ["NETBOX_ENDPOINT"]
-    assert netbox_token == os.environ["NETBOX_TOKEN"]
-    assert dhcp_config_location == "/etc/dnsmasq.d/dhcphosts.conf"
-    assert dns_hosts_location == "/etc/dnsmasq.hosts"
+    if option:
+        assert dhcp_config_location == "dhcphosts.conf"
+        assert dns_hosts_location == "dnsmasq.hosts"
+    else:
+        assert dhcp_config_location == "/etc/dnsmasq.d/dhcphosts.conf"
+        assert dns_hosts_location == "/etc/dnsmasq.hosts"
     assert "ERROR" not in caplog.text
 
 
@@ -183,3 +203,40 @@ def test_import_config_missing_env(caplog, del_test_environment):
     with pytest.raises(KeyError):
         import_config(dev=False)
     assert "Missing Environment variable: 'NETBOX_ENDPOINT'" in caplog.text
+
+
+@pytest.mark.parametrize("option", ("-h", "--help"))
+def test_main_help(capsys, option):
+    """
+    Test main function for correctly showing the help when using either -h or --help parameters.
+
+    Args:
+        capsys: Pytest fixture for capturing stdout/stderr output
+        option: Pytest parametrize fixture with both -h and --help parameters
+    """
+    with patch("sys.argv", ["netbox_dnsmasq", option]):
+        with pytest.raises(SystemExit):
+            main()
+        captured = capsys.readouterr()
+        assert (
+            "usage: netbox_dnsmasq [-h] [-d] [--dev] [-t TAG] "
+            "[--dns-tag DNS_TAG] [-e]\n" in captured.out
+        )
+
+
+def test_main_run(capsys, set_test_environment):
+    """
+    Test main function for correctly starting the script.
+
+    Args:
+        capsys: Pytest fixture for capturing stdout/stderr output
+        set_test_environment: Pytest fixture for setting netbox environment variables
+    """
+    with patch("sys.argv", ["netbox_dnsmasq", "--debug", "--dev", "-e"]):
+        main()
+        captured = capsys.readouterr()
+        assert (
+            "More than one tag for DHCP IP 1.1.1.222 found. Skipping tag vmnet."
+            in captured.err
+        )
+        assert "ERROR" not in captured.err
