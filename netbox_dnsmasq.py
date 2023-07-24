@@ -1,5 +1,8 @@
+#!/usr/bin/env python3
+# noqa: E265
+
 """Main script for netbox_dnsmasq."""
-# !/usr/bin/env python3 # noqa: E265
+
 from __future__ import annotations
 
 import argparse
