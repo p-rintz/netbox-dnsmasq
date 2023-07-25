@@ -147,6 +147,12 @@ def get_ip_data(
     nb_dns = {}
     dhcp_prefixes = nb.ipam.prefixes.filter(tag=[dhcp_tag])
     ip_addresses = nb.ipam.ip_addresses.filter(tag=[dhcp_ignore_tag])
+
+    # create cache for dcim.interfaces as looking up mac addresses within loop is quite slow
+    interface_cache = {}
+    for iface in nb.dcim.interfaces.all():
+        interface_cache[iface.id] = iface
+
     for ip in ip_addresses:
         ip_address = re.sub("/.*", "", ip.address)
         if len(ip.dns_name) > 0:
@@ -170,11 +176,13 @@ def get_ip_data(
         for ip in prefix_ips:
             ip_address = re.sub("/.*", "", ip.address)
             if ip.assigned_object_id:
+                mac_address = interface_cache[ip.assigned_object_id].mac_address \
+                    if ip.assigned_object_id in interface_cache else ip.assigned_object.mac_address
                 if (
-                    ip.assigned_object.mac_address is not None
+                    mac_address is not None
                     and dhcp_ignore_tag not in list(t.name for t in ip.tags)
                 ):
-                    mac = ip.assigned_object.mac_address.lower()
+                    mac = mac_address.lower()
                     if ip_address in nb_dhcp:
                         logger.warning(
                             f"Duplicate IP address {ip_address}"
@@ -343,7 +351,7 @@ def main() -> None:
         DNS_hosts_location,
     ) = import_config(args.dev)
 
-    api = pynetbox.api(url=NETBOX_ENDPOINT, token=NETBOX_TOKEN)
+    api = pynetbox.api(url=NETBOX_ENDPOINT, token=NETBOX_TOKEN, threading=True)
 
     dhcp, dns = get_ip_data(args.dns_tag, args.tag, nb=api)
     check_duplicates(
