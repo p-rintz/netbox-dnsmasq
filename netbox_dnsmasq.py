@@ -148,7 +148,8 @@ def get_ip_data(
     dhcp_prefixes = nb.ipam.prefixes.filter(tag=[dhcp_tag])
     ip_addresses = nb.ipam.ip_addresses.filter(tag=[dhcp_ignore_tag])
 
-    # create cache for dcim.interfaces as looking up mac addresses within loop is quite slow
+    # create cache for dcim.interfaces as looking up mac addresses within
+    # loop is quite slow
     interface_cache = {}
     for iface in nb.dcim.interfaces.all():
         interface_cache[iface.id] = iface
