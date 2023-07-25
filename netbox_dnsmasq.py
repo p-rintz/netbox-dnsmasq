@@ -176,11 +176,13 @@ def get_ip_data(
         for ip in prefix_ips:
             ip_address = re.sub("/.*", "", ip.address)
             if ip.assigned_object_id:
-                mac_address = interface_cache[ip.assigned_object_id].mac_address \
-                    if ip.assigned_object_id in interface_cache else ip.assigned_object.mac_address
-                if (
-                    mac_address is not None
-                    and dhcp_ignore_tag not in list(t.name for t in ip.tags)
+                mac_address = (
+                    interface_cache[ip.assigned_object_id].mac_address
+                    if ip.assigned_object_id in interface_cache
+                    else ip.assigned_object.mac_address
+                )
+                if mac_address is not None and dhcp_ignore_tag not in list(
+                    t.name for t in ip.tags
                 ):
                     mac = mac_address.lower()
                     if ip_address in nb_dhcp:
