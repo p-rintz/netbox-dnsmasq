@@ -351,7 +351,7 @@ def main() -> None:
         DNS_hosts_location,
     ) = import_config(args.dev)
 
-    api = pynetbox.api(url=NETBOX_ENDPOINT, token=NETBOX_TOKEN)
+    api = pynetbox.api(url=NETBOX_ENDPOINT, token=NETBOX_TOKEN, threading=True)
 
     dhcp, dns = get_ip_data(args.dns_tag, args.tag, nb=api)
     check_duplicates(
